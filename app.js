@@ -4,4 +4,15 @@ const searchInput = document.querySelector('.search-input');
 const submitButton = document.querySelector('.submit-btn');
 let searchValue;
 
-('https://api.pexels.com/v1/curated?per_page=15&page=1');
+async function curatedPhotos() {
+  const dataFetch = await fetch(
+    'https://api.pexels.com/v1/curated?per_page=15&page=1',
+    {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        Authorization: auth,
+      },
+    }
+  );
+}
