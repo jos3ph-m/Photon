@@ -6,12 +6,13 @@ let searchValue;
 
 //Event Listeners
 searchInput.addEventListener('input', updateInput);
-form.addEventListener('submit', () => {
-  searchPhotos(searchValue)
-})
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  searchPhotos(searchValue);
+});
 
 function updateInput(e) {
-  searchValue = e.target.value
+  searchValue = e.target.value;
 }
 
 async function curatedPhotos() {
@@ -30,7 +31,7 @@ async function curatedPhotos() {
     const galleryImg = document.createElement('div');
     galleryImg.classList.add('gallery-img');
     galleryImg.innerHTML = `<img src=${photo.src.large}></img>
-    <p>%{photo.photographer}</p>
+    <p>${photo.photographer}</p>
     `;
     gallery.appendChild(galleryImg);
   });
@@ -38,7 +39,7 @@ async function curatedPhotos() {
 
 async function searchPhotos(query) {
   const dataFetch = await fetch(
-    `https://api.pexels.com/v1/search?query=${query}+query&per_page=15&page=1`
+    `https://api.pexels.com/v1/search?query=${query}+query&per_page=15&page=1`,
     {
       method: 'GET',
       headers: {
@@ -46,13 +47,13 @@ async function searchPhotos(query) {
         Authorization: auth,
       },
     }
-  )
+  );
   const data = await dataFetch.json();
   data.photos.forEach((photo) => {
     const galleryImg = document.createElement('div');
     galleryImg.classList.add('gallery-img');
     galleryImg.innerHTML = `<img src=${photo.src.large}></img>
-    <p>%{photo.photographer}</p>
+    <p>${photo.photographer}</p>
     `;
     gallery.appendChild(galleryImg);
   });
