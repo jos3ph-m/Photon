@@ -15,4 +15,15 @@ async function curatedPhotos() {
       },
     }
   );
+  const data = await dataFetch.json();
+  data.photos.forEach((photo) => {
+    const galleryImg = document.createElement('div');
+    galleryImg.classList.add('gallery-img');
+    galleryImg.innerHTML = `<img src=${photo.src.large}></img>
+    <p>%{photo.photographer}</p>
+    `;
+    gallery.appendChild(galleryImg);
+  });
 }
+
+curatedPhotos();
