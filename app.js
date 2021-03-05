@@ -4,7 +4,12 @@ const searchInput = document.querySelector('.search-input');
 const submitButton = document.querySelector('.submit-btn');
 let searchValue;
 
+//Event Listeners
+searchInput.addEventListener('input', updateInput);
 
+function updateInput(e) {
+  console.log(e.target.value);
+}
 
 async function curatedPhotos() {
   const dataFetch = await fetch(
