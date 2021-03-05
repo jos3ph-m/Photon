@@ -39,3 +39,12 @@ h2 {
   border: none;
   border: 2px solid rgb(78, 69, 124);
 }
+
+.search-form button {
+  border: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background: rgb(78, 69, 124);
+  color: #fff;
+  cursor: pointer;
+}
