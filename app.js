@@ -23,20 +23,12 @@ async function fetchApi(url) {
       Authorization: auth,
     },
   });
+  const data = await dataFetch.json();
+  return data;
 }
 
 async function curatedPhotos() {
-  const dataFetch = await fetch(
-    'https://api.pexels.com/v1/curated?per_page=15&page=1',
-    {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json',
-        Authorization: auth,
-      },
-    }
-  );
-  const data = await dataFetch.json();
+  const data = fetchApi('https://api.pexels.com/v1/curated?per_page=15&page=1');
   data.photos.forEach((photo) => {
     const galleryImg = document.createElement('div');
     galleryImg.classList.add('gallery-img');
@@ -48,17 +40,9 @@ async function curatedPhotos() {
 }
 
 async function searchPhotos(query) {
-  const dataFetch = await fetch(
-    `https://api.pexels.com/v1/search?query=${query}+query&per_page=15&page=1`,
-    {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json',
-        Authorization: auth,
-      },
-    }
+  const data = await fetchApi(
+    `https://api.pexels.com/v1/search?query=${query}+query&per_page=15&page=1`
   );
-  const data = await dataFetch.json();
   data.photos.forEach((photo) => {
     const galleryImg = document.createElement('div');
     galleryImg.classList.add('gallery-img');
