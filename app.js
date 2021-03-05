@@ -8,7 +8,7 @@ let searchValue;
 searchInput.addEventListener('input', updateInput);
 
 function updateInput(e) {
-  console.log(e.target.value);
+  searchValue = e.target.value
 }
 
 async function curatedPhotos() {
