@@ -3,3 +3,5 @@ const gallery = document.querySelector('.gallery');
 const searchInput = document.querySelector('.search-input');
 const submitButton = document.querySelector('.submit-btn');
 let searchValue;
+
+('https://api.pexels.com/v1/curated?per_page=15&page=1');
