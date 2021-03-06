@@ -55,3 +55,7 @@ h2 {
   align-items: center;
   color: gray;
 }
+
+.gallery-info a {
+  color: gray;
+}
