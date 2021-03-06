@@ -33,6 +33,7 @@ function generatePictures(data) {
     galleryImg.classList.add('gallery-img');
     galleryImg.innerHTML = `<img src=${photo.src.large}></img>
     <p>${photo.photographer}</p>
+    <a href=${photo.src.original}>Download</a>
     `;
     gallery.appendChild(galleryImg);
   });
