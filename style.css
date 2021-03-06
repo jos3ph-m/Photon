@@ -48,3 +48,10 @@ h2 {
   color: #fff;
   cursor: pointer;
 }
+
+.gallery-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: gray;
+}
