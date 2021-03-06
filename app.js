@@ -55,6 +55,7 @@ async function searchPhotos(query) {
 
 function clear() {
   gallery.innerHTML = '';
+  searchInput.value = '';
 }
 
 curatedPhotos();
