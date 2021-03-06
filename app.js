@@ -52,4 +52,8 @@ async function searchPhotos(query) {
   generatePictures(data);
 }
 
+function clear() {
+  gallery.innerHTML = '';
+}
+
 curatedPhotos();
