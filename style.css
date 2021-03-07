@@ -79,4 +79,15 @@ h2 {
 
 .nav-button {
   min-height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.more {
+  padding: 1rem 3rem;
+  background: rgb(78, 69, 124);
+  color: white;
+  border: none;
+  font-size: 1.2rem;
 }
