@@ -40,7 +40,7 @@ function generatePictures(data) {
     galleryImg.innerHTML = `
     <div class="gallery-info"> 
     <p>${textAbstract(photo.photographer)}</p>
-    <a href=${photo.src.original}>Download</a>
+    <a href=${photo.src.original}>View</a>
     </div>
     <img src=${photo.src.large}></img>
     `;
