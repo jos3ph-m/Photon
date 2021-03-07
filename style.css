@@ -66,6 +66,7 @@ h2 {
   padding: 2rem 0rem;
   width: 80%;
   margin: auto;
+  row-gap: 5rem;
 }
 
 .gallery-img img {
