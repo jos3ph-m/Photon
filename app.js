@@ -33,7 +33,7 @@ function generatePictures(data) {
     galleryImg.classList.add('gallery-img');
     galleryImg.innerHTML = `
     <div class="gallery-info"> 
-    <p>${photo.photographer}</p>
+    <p>${textAbstract(photo.photographer)}</p>
     <a href=${photo.src.original}>Download</a>
     </div>
     <img src=${photo.src.large}></img>
@@ -60,6 +60,20 @@ async function searchPhotos(query) {
 function clear() {
   gallery.innerHTML = '';
   searchInput.value = '';
+}
+
+function textAbstract(text) {
+  if (text == null) {
+    return '';
+  }
+  if (text.length <= 23) {
+    return text;
+  }
+
+  text = text.substring(0, 23);
+  last = text.lastIndexOf(' ');
+  text = text.substring(0, last);
+  return text + '...';
 }
 
 curatedPhotos();
